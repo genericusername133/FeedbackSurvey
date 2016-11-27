@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fi.haaga_helia.entity.Feedback;
-import fi.haaga_helia.entity.Question;
+import fi.haaga_helia.entity.Query;
 import fi.haaga_helia.repository.FeedbackRepository;
 
-@RestController
+@RestController // shorthand for @Controller and @ResponseBody rolled together
 public class FeedbackController {
 	@Autowired
     private FeedbackRepository repository; 
 
 	
 
-	@RequestMapping(value = "/returnFormJson", method = RequestMethod.GET)
-	public Question returnForm() {
-		Question feedback = new Question();
+	@RequestMapping(value = "/returnQuestion", method = RequestMethod.GET)
+	public Query returnForm() {
+		Query feedback = new Query();
 		String [] list = {"Erinomainen", "Kiitettävä", "Hyvä", "Tyydyttävä", "Heikko"};
 		feedback.setRadio(list);
 		feedback.setQuestion("Anna arvosana kurssin sisällölle.");

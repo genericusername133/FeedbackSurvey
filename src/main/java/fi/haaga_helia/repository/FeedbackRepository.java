@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import fi.haaga_helia.entity.Feedback;
 
 public interface FeedbackRepository extends CrudRepository<Feedback, Long>{
-	List<Feedback> findByFeedbackId(int fId);
+	List<Feedback> findByFeedbackId(int feedbackId);
 }
