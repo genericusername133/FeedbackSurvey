@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fi.haaga_helia.entity.Feedback;
+import fi.haaga_helia.entity.Question;
 import fi.haaga_helia.repository.FeedbackRepository;
 
 @RestController
@@ -20,10 +21,11 @@ public class FeedbackController {
 	
 
 	@RequestMapping(value = "/returnFormJson", method = RequestMethod.GET)
-	public Feedback returnForm() {
-		Feedback feedback = new Feedback();
-		feedback.setRadio("erinomainen");
-		//feedback.setQuestion("Anna arvosana kurssin sisällölle.");
+	public Question returnForm() {
+		Question feedback = new Question();
+		String [] list = {"Erinomainen", "Kiitettävä", "Hyvä", "Tyydyttävä", "Heikko"};
+		feedback.setRadio(list);
+		feedback.setQuestion("Anna arvosana kurssin sisällölle.");
 		return feedback;
 	}
 	

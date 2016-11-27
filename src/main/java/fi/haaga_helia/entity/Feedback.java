@@ -17,7 +17,6 @@ private String radio;
 
 public Feedback() {
 	super();
-	// TODO Auto-generated constructor stub
 }
 
 public Feedback(int fId, String radio, int scale, String[] multipleChoice, String openText) {
