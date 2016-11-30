@@ -1,0 +1,4 @@
+CREATE TABLE FeedbackSurvey (
+        fId SMALLINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        radio varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
