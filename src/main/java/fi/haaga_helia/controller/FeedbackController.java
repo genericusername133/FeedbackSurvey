@@ -50,13 +50,16 @@ public class FeedbackController {
 		List<Query> queries= (List<Query>) qrepository.findAll();
 		return queries;
 	}
+	
 	@RequestMapping(value = "/saveQuery", method = RequestMethod.POST)
 	public void saveQuery(@RequestBody Query query) {
 		qrepository.save(query);
 	}
+	
 	@RequestMapping(value = "/updateQuery", method = RequestMethod.PUT)
 	public void updateQuery(@RequestBody Query query) {
 	}
+	
 	@RequestMapping(value = "/deleteQuery/{queryId}", method = RequestMethod.GET)
     public void deleteStudent(@PathVariable("queryId") Long queryId) {
     	repository.delete(queryId);
