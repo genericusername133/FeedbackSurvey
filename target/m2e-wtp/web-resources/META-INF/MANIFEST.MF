@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: Feedback
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Janne
+Built-By: a1503045
 Implementation-Vendor-Id: fi.haaga-helia.Feedback
-Build-Jdk: 1.8.0_91
+Build-Jdk: 1.8.0_77
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 
