@@ -29,7 +29,7 @@ public class FeedbackController {
 	public Query returnForm() {
 		Query feedback = new Query();
 		String [] list = {"Erinomainen", "Kiitettävä", "Hyvä", "Tyydyttävä", "Heikko"};
-		feedback.setRadio(list);
+		feedback.setRadioList(list);
 		feedback.setQuestion("Anna arvosana kurssin sisällölle.");
 		return feedback;
 	}
