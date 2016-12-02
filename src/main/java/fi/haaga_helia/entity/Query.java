@@ -14,25 +14,25 @@ public class Query {
 	@GeneratedValue(strategy=GenerationType.AUTO)	
 int queryId;
 String question;
-String [] radio;
+String [] radioList;
 
 public Query() {
 	super();
 }
 
-public Query(int queryId, String question, String[] radio) {
+public Query(int queryId, String question, String[] radioList) {
 	super();
 	this.queryId = queryId;
 	this.question = question;
-	this.radio = radio;
+	this.radioList = radioList;
 }
 
-public String[] getRadio() {
-	return radio;
+public String[] getRadioList() {
+	return radioList;
 }
 
-public void setRadio(String[] radio) {
-	this.radio = radio;
+public void setRadioList(String[] radioList) {
+	this.radioList = radioList;
 }
 
 public int getQueryId() {
@@ -49,6 +49,6 @@ public void setQuestion(String question) {
 
 @Override
 public String toString() {
-	return "Question [queryId=" + queryId + ", question=" + question + ", radio=" + Arrays.toString(radio) + "]";
+	return "Question [queryId=" + queryId + ", question=" + question + ", radioList=" + Arrays.toString(radioList) + "]";
 }
 }
