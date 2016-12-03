@@ -61,7 +61,7 @@ public class FeedbackController {
 	}
 	
 	@RequestMapping(value = "/deleteQuery/{queryId}", method = RequestMethod.GET)
-    public void deleteStudent(@PathVariable("queryId") Long queryId) {
+    public void deleteQuery(@PathVariable("queryId") Long queryId) {
     	repository.delete(queryId);
     }    
 }

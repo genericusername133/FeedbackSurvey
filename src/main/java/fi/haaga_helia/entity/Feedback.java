@@ -12,17 +12,23 @@ public class Feedback{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 private int feedbackId;
+private int queryId;
 private String radio;
 
 public Feedback() {
 	super();
 }
 
-public Feedback(int feedbackId, String radio, int scale, String[] multipleChoice, String openText) {
+
+
+public Feedback(int feedbackId, int queryId, String radio) {
 	super();
 	this.feedbackId = feedbackId;
+	this.queryId = queryId;
 	this.radio = radio;
 }
+
+
 
 public int getFeedbackId() {
 	return feedbackId;
@@ -35,10 +41,24 @@ public String getRadio() {
 
 public void setRadio(String radio) {
 	this.radio = radio;
+
 }
+
+public int getQueryId() {
+	return queryId;
+}
+
+
+
+public void setQueryId(int queryId) {
+	this.queryId = queryId;
+}
+
+
+
 @Override
 public String toString() {
-	return "Feedback [feedbackId=" + feedbackId + ", radio=" + radio + "]";
+	return "Feedback [feedbackId=" + feedbackId + ", queryId=" + queryId + ", radio=" + radio + "]";
 }
 
 }
