@@ -34,6 +34,8 @@ public class FeedbackController {
 		return feedback;
 	}
 	
+	//Feedback metodit
+	
 	@RequestMapping(value = "/returnFeedback", method = RequestMethod.GET)
 	public List<Feedback> returnFeedback() {
 		List<Feedback> feedbacks= (List<Feedback>) repository.findAll();
@@ -43,6 +45,14 @@ public class FeedbackController {
 	@RequestMapping(value = "/saveFeedback", method = RequestMethod.POST)
 	public void saveFeedback(@RequestBody Feedback feedback) {
 		repository.save(feedback);
+	}
+	
+	//Query metodit
+	
+	@RequestMapping(value = "/returnQueryById/{queryId}", method = RequestMethod.GET)
+	public List<Query> returnQueryById(@PathVariable("queryId") int queryId) {
+		List<Query> query= (List<Query>) qrepository.findByQueryId(queryId);
+		return query;
 	}
 	
 	@RequestMapping(value = "/returnQueries", method = RequestMethod.GET)
@@ -61,7 +71,7 @@ public class FeedbackController {
 	}
 	
 	@RequestMapping(value = "/deleteQuery/{queryId}", method = RequestMethod.GET)
-    public void deleteQuery(@PathVariable("queryId") Long queryId) {
-    	repository.delete(queryId);
+    public void deleteQuery(@PathVariable("queryId") int queryId) {
+    	qrepository.delete(qrepository.findByQueryId(queryId));
     }    
 }
