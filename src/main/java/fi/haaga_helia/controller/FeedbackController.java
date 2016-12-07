@@ -42,7 +42,7 @@ public class FeedbackController {
 		return feedbacks;
 }
 	
-	@RequestMapping(value = "/saveFeedback", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveFeedback", method = RequestMethod.POST, headers="Accept=application/json")
 	public void saveFeedback(@RequestBody Feedback feedback) {
 		repository.save(feedback);
 	}
@@ -61,7 +61,7 @@ public class FeedbackController {
 		return queries;
 	}
 	
-	@RequestMapping(value = "/saveQuery", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveQuery", method = RequestMethod.POST, headers="Accept=application/json")
 	public void saveQuery(@RequestBody Query query) {
 		qrepository.save(query);
 	}
