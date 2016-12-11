@@ -4,6 +4,7 @@ package fi.haaga_helia.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import fi.haaga_helia.entity.Query;
 import fi.haaga_helia.repository.FeedbackRepository;
 import fi.haaga_helia.repository.QueryRepository;
 
+@CrossOrigin
 @RestController // shorthand for @Controller and @ResponseBody rolled together
 public class FeedbackController {
 	@Autowired
@@ -66,8 +68,9 @@ public class FeedbackController {
 		qrepository.save(query);
 	}
 	
-	@RequestMapping(value = "/updateQuery", method = RequestMethod.PUT)
+	@RequestMapping(value = "/updateQuery", method = RequestMethod.POST)
 	public void updateQuery(@RequestBody Query query) {
+		qrepository.save(query);
 	}
 	
 	@RequestMapping(value = "/deleteQuery/{queryId}", method = RequestMethod.GET)
