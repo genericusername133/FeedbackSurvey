@@ -14,26 +14,34 @@ public class Feedback{
 private int feedbackId;
 private int queryId;
 private String radio;
+private String [] checkbox;
+private String openText;
 
 public Feedback() {
 	super();
 }
 
-
-
-public Feedback(int feedbackId, int queryId, String radio) {
+public Feedback(int feedbackId, int queryId, String radio, String[] checkbox,
+		String openText) {
 	super();
 	this.feedbackId = feedbackId;
 	this.queryId = queryId;
 	this.radio = radio;
+	this.checkbox = checkbox;
+	this.openText = openText;
 }
-
-
 
 public int getFeedbackId() {
 	return feedbackId;
 }
 
+public int getQueryId() {
+	return queryId;
+}
+
+public void setQueryId(int queryId) {
+	this.queryId = queryId;
+}
 
 public String getRadio() {
 	return radio;
@@ -41,20 +49,23 @@ public String getRadio() {
 
 public void setRadio(String radio) {
 	this.radio = radio;
-
 }
 
-public int getQueryId() {
-	return queryId;
+public String[] getCheckbox() {
+	return checkbox;
 }
 
-
-
-public void setQueryId(int queryId) {
-	this.queryId = queryId;
+public void setCheckbox(String[] checkbox) {
+	this.checkbox = checkbox;
 }
 
+public String getOpenText() {
+	return openText;
+}
 
+public void setOpenText(String openText) {
+	this.openText = openText;
+}
 
 @Override
 public String toString() {
